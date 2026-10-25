@@ -694,8 +694,8 @@ html, body { color: #f6eefc; }
     var(--bd-bg);
   background-attachment: fixed;
 }
-.bd-bg > * { position: relative; z-index: 1; }
-.bd-bg > .hw-fx { position: fixed; z-index: 0; }
+.bd-bg { isolation: isolate; }
+.bd-bg > .hw-fx { z-index: -1; }
 .bd-panel {
   border-color: rgba(255, 138, 31, 0.12);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 40px -26px rgba(177, 75, 255, 0.55);
