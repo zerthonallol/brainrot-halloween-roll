@@ -102,7 +102,7 @@ export function CrashView() {
     const tipX = X(elapsed)
     const tipY = Y(mult)
     const grad = ctx.createLinearGradient(0, tipY, 0, h - pad)
-    grad.addColorStop(0, ph === "crashed" ? "rgba(239,68,68,.35)" : "rgba(182,255,59,.35)")
+    grad.addColorStop(0, ph === "crashed" ? "rgba(239,68,68,.35)" : "rgba(255, 138, 31,.35)")
     grad.addColorStop(1, "rgba(0,0,0,0)")
     ctx.save()
     ctx.lineTo(tipX, h - pad)

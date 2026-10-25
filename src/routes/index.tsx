@@ -261,7 +261,7 @@ function SettingsSheet({ onClose }: { onClose: () => void }) {
 function Header({ onDeposit, onMenu }: { onDeposit: () => void; onMenu: () => void }) {
   const { balance } = useStore()
   return (
-    <header className="sticky top-0 z-40 border-b border-white/6 bg-[#0b0716]/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-white/6 bg-[#0b0610]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-xl items-center justify-between gap-3 px-4 py-3">
         <div className="flex items-center gap-2.5">
           <button type="button" onClick={onMenu} className="bd-dots" aria-label="Открыть меню">
@@ -497,7 +497,7 @@ function Hero({ onPlay, onLearn }: { onPlay: () => void; onLearn: () => void }) 
           src={meowlGuide}
           alt="Meowl"
           fetchPriority="high"
-          className="bd-float relative z-[2] h-44 w-auto object-contain drop-shadow-[0_14px_24px_rgba(182,255,59,.35)]"
+          className="bd-float relative z-[2] h-44 w-auto object-contain drop-shadow-[0_14px_24px_rgba(255, 138, 31,.35)]"
         />
       </div>
       <Coin size={28} className="bd-float absolute right-5 top-5" />

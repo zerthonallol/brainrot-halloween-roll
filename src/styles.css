@@ -150,13 +150,13 @@ code {
 :root {
   --font-body: 'Manrope', system-ui, sans-serif;
   --font-heading: 'Unbounded', 'Manrope', system-ui, sans-serif;
-  --bd-bg: #0b0716;
-  --bd-panel: #150e27;
-  --bd-panel-2: #1d1436;
+  --bd-bg: #0b0610;
+  --bd-panel: #170b1c;
+  --bd-panel-2: #241029;
   --bd-line: rgba(255, 255, 255, 0.08);
   --bd-gold: #ffc83d;
-  --bd-lime: #b6ff3b;
-  --bd-pink: #ff4fd8;
+  --bd-lime: #ff8a1f;
+  --bd-pink: #b14bff;
 }
 
 html,
@@ -172,7 +172,7 @@ body {
 
 .bd-bg {
   background:
-    radial-gradient(60rem 30rem at 85% -10%, rgba(255, 79, 216, 0.16), transparent 60%),
+    radial-gradient(60rem 30rem at 85% -10%, rgba(177, 75, 255, 0.16), transparent 60%),
     radial-gradient(50rem 30rem at -10% 10%, rgba(124, 58, 237, 0.22), transparent 60%),
     var(--bd-bg);
 }
@@ -185,16 +185,16 @@ body {
 
 .bd-btn {
   font-family: var(--font-heading);
-  background: linear-gradient(180deg, #d4ff6b, #8de81c);
+  background: linear-gradient(180deg, #ffb257, #ff7300);
   color: #160b2e;
   border-radius: 0.9rem;
   font-weight: 700;
-  box-shadow: 0 4px 0 #4f8a09, 0 10px 24px -8px rgba(182, 255, 59, 0.6);
+  box-shadow: 0 4px 0 #8a3300, 0 10px 24px -8px rgba(255, 138, 31, 0.6);
   transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s;
 }
 .bd-btn:active:not(:disabled) {
   transform: translateY(3px);
-  box-shadow: 0 1px 0 #4f8a09;
+  box-shadow: 0 1px 0 #8a3300;
 }
 .bd-btn:disabled {
   filter: grayscale(0.9) brightness(0.6);
@@ -405,11 +405,11 @@ body {
 /* ---- Corner menu (3 dots) ---- */
 .bd-dots {
   position: relative; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 0.95rem;
-  background: linear-gradient(180deg, #d4ff6b, #8de81c); color: #160b2e;
-  box-shadow: 0 4px 0 #4f8a09, 0 0 22px rgba(182, 255, 59, 0.55);
+  background: linear-gradient(180deg, #ffb257, #ff7300); color: #160b2e;
+  box-shadow: 0 4px 0 #8a3300, 0 0 22px rgba(255, 138, 31, 0.55);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
-.bd-dots:active { transform: translateY(3px); box-shadow: 0 1px 0 #4f8a09, 0 0 16px rgba(182, 255, 59, 0.5); }
+.bd-dots:active { transform: translateY(3px); box-shadow: 0 1px 0 #8a3300, 0 0 16px rgba(255, 138, 31, 0.5); }
 .bd-dots::before {
   content: ""; position: absolute; inset: -4px; border-radius: 1.15rem; border: 2px solid var(--bd-lime);
   animation: bd-dots-ping 2s ease-out infinite; pointer-events: none;
@@ -423,8 +423,8 @@ body {
   width: min(22rem, calc(100vw - 1.5rem)); max-height: calc(100dvh - 1.5rem); overflow-y: auto;
   border-radius: 1.5rem; padding: 0.75rem;
   background: linear-gradient(180deg, #221842, #120b22);
-  border: 1px solid rgba(182, 255, 59, 0.3);
-  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.8), 0 0 40px -10px rgba(182, 255, 59, 0.35);
+  border: 1px solid rgba(255, 138, 31, 0.3);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.8), 0 0 40px -10px rgba(255, 138, 31, 0.35);
   transform-origin: top left;
   animation: bd-menu-in 0.22s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
 }
@@ -436,9 +436,9 @@ body {
   position: relative; display: flex; width: 100%; align-items: center; gap: 0.75rem; overflow: hidden; isolation: isolate;
   border-radius: 1.15rem; padding: 0.8rem; text-align: left;
   background:
-    radial-gradient(80% 140% at 0% 0%, rgba(255, 79, 216, 0.45), transparent 60%),
-    radial-gradient(80% 140% at 100% 100%, rgba(182, 255, 59, 0.3), transparent 60%),
-    linear-gradient(135deg, #3b0f5c, #1a0b33);
+    radial-gradient(80% 140% at 0% 0%, rgba(177, 75, 255, 0.45), transparent 60%),
+    radial-gradient(80% 140% at 100% 100%, rgba(255, 138, 31, 0.3), transparent 60%),
+    linear-gradient(135deg, #2a0b3d, #1a0b33);
   border: 1px solid rgba(255, 255, 255, 0.14);
   transition: transform 0.15s ease;
 }
@@ -453,7 +453,7 @@ body {
 .bd-menu-item[data-active="true"] {
   color: var(--bd-lime); border-color: color-mix(in oklab, var(--bd-lime) 60%, transparent);
   background: color-mix(in oklab, var(--bd-lime) 12%, transparent);
-  box-shadow: 0 0 18px -4px rgba(182, 255, 59, 0.45);
+  box-shadow: 0 0 18px -4px rgba(255, 138, 31, 0.45);
 }
 
 /* ---- Battle pass ---- */
@@ -462,7 +462,7 @@ body {
   border: 1px solid rgba(255, 200, 61, 0.35);
   background:
     radial-gradient(70% 120% at 100% 0%, rgba(255, 200, 61, 0.35), transparent 60%),
-    radial-gradient(70% 120% at 0% 100%, rgba(182, 255, 59, 0.22), transparent 60%),
+    radial-gradient(70% 120% at 0% 100%, rgba(255, 138, 31, 0.22), transparent 60%),
     linear-gradient(135deg, #2b1450, #120b22);
 }
 .bd-bp-tier {
@@ -506,8 +506,8 @@ body {
 /* ---- Battle pass levels ---- */
 .bd-bp-badge {
   display: grid; place-items: center; align-content: center; width: 4rem; height: 4rem; flex-shrink: 0; border-radius: 1.1rem;
-  color: #160b2e; background: linear-gradient(160deg, #e6ff9a, var(--bd-lime));
-  box-shadow: 0 4px 0 #5f8c12, 0 0 28px -6px rgba(182, 255, 59, 0.7);
+  color: #160b2e; background: linear-gradient(160deg, #ffd08a, var(--bd-lime));
+  box-shadow: 0 4px 0 #5f8c12, 0 0 28px -6px rgba(255, 138, 31, 0.7);
 }
 .bd-bp-progress-lg { height: 10px; }
 .bd-bp-node {
@@ -515,7 +515,7 @@ body {
   color: rgba(255, 255, 255, 0.45); background: rgba(0, 0, 0, 0.35); border: 1px solid var(--bd-line);
 }
 .bd-bp-node[data-reached="true"] {
-  color: #160b2e; background: var(--bd-lime); border-color: transparent; box-shadow: 0 0 16px -4px rgba(182, 255, 59, 0.7);
+  color: #160b2e; background: var(--bd-lime); border-color: transparent; box-shadow: 0 0 16px -4px rgba(255, 138, 31, 0.7);
 }
 .bd-bp-cell {
   --track: var(--bd-lime);
@@ -560,7 +560,7 @@ body {
 /* ---- BrainrotDice brand ---- */
 .bd-logo {
   width: 2.6rem; height: 2.6rem; object-fit: contain;
-  filter: drop-shadow(0 4px 10px rgba(182, 255, 59, 0.35));
+  filter: drop-shadow(0 4px 10px rgba(255, 138, 31, 0.35));
   animation: bd-logo-bob 4s ease-in-out infinite;
 }
 @keyframes bd-logo-bob { 50% { transform: translateY(-2px) rotate(-4deg); } }
@@ -568,7 +568,7 @@ body {
   font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 1; letter-spacing: -0.02em;
 }
 .bd-wordmark > span {
-  background: linear-gradient(180deg, #e6ff9a, var(--bd-lime)); -webkit-background-clip: text; background-clip: text; color: transparent;
+  background: linear-gradient(180deg, #ffd08a, var(--bd-lime)); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 
 /* Case covers have the white sticker outline baked in — only add depth. */
@@ -576,8 +576,8 @@ body {
 .bd-case-new {
   display: inline-flex; align-items: center; border-radius: 9999px; padding: 2px 8px;
   font-size: 9px; font-weight: 900; letter-spacing: 0.08em; color: #160b2e;
-  background: linear-gradient(180deg, #e6ff9a, var(--bd-lime));
-  box-shadow: 0 2px 0 #4f8a09, 0 0 14px rgba(182, 255, 59, 0.6);
+  background: linear-gradient(180deg, #ffd08a, var(--bd-lime));
+  box-shadow: 0 2px 0 #8a3300, 0 0 14px rgba(255, 138, 31, 0.6);
   animation: bd-new-wiggle 2.6s ease-in-out infinite;
 }
 @keyframes bd-new-wiggle { 0%, 80%, 100% { transform: none; } 85% { transform: rotate(-8deg) scale(1.08); } 90% { transform: rotate(6deg) scale(1.08); } }
@@ -585,17 +585,17 @@ body {
 /* ---- Hero ---- */
 .bd-hero {
   position: relative; overflow: hidden; isolation: isolate; border-radius: 1.75rem; padding: 1.25rem;
-  border: 1px solid rgba(182, 255, 59, 0.22);
+  border: 1px solid rgba(255, 138, 31, 0.22);
   background:
-    radial-gradient(70% 90% at 100% 100%, rgba(182, 255, 59, 0.28), transparent 60%),
-    radial-gradient(60% 80% at 0% 0%, rgba(255, 79, 216, 0.35), transparent 60%),
-    linear-gradient(135deg, #3b0f5c 0%, #1a0b33 60%, #0f2a0a 130%);
-  box-shadow: 0 20px 50px -24px rgba(255, 79, 216, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    radial-gradient(70% 90% at 100% 100%, rgba(255, 138, 31, 0.28), transparent 60%),
+    radial-gradient(60% 80% at 0% 0%, rgba(177, 75, 255, 0.35), transparent 60%),
+    linear-gradient(135deg, #2a0b3d 0%, #1a0b33 60%, #3a1400 130%);
+  box-shadow: 0 20px 50px -24px rgba(177, 75, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 .bd-hero-chip {
   display: inline-flex; align-items: center; gap: 0.35rem; border-radius: 9999px; padding: 0.3rem 0.7rem;
   font-size: 10px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bd-lime);
-  background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(182, 255, 59, 0.3);
+  background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 138, 31, 0.3);
 }
 .bd-hero-chip::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: var(--bd-lime); box-shadow: 0 0 8px var(--bd-lime); }
 .bd-hero-accent {

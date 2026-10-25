@@ -170,7 +170,7 @@ export function UpgraderView() {
                 className={cn(
                   "rounded-xl border py-2 text-xs font-extrabold transition-all active:scale-95 disabled:opacity-40",
                   presetId === p.id
-                    ? "border-[var(--bd-lime)] bg-[var(--bd-lime)]/15 text-[var(--bd-lime)] shadow-[0_0_12px_rgba(182,255,59,.35)]"
+                    ? "border-[var(--bd-lime)] bg-[var(--bd-lime)]/15 text-[var(--bd-lime)] shadow-[0_0_12px_rgba(255, 138, 31,.35)]"
                     : p.kind === "mult"
                       ? "border-white/10 bg-white/5 text-white/80 hover:border-white/25"
                       : "border-[var(--bd-gold)]/30 bg-[var(--bd-gold)]/10 text-[var(--bd-gold)] hover:border-[var(--bd-gold)]/60",
