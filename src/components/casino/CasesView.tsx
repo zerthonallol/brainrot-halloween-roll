@@ -489,7 +489,7 @@ export function InviteButton({ userId }: { userId: number }) {
       className="bd-btn flex w-full items-center justify-center gap-2 py-2.5 text-sm"
       onClick={() => {
         haptic()
-        openShare(link, "🧠 Залетай в BrainrotDice! Бесплатные кейсы с брейнротами из Steal a Brainrot, апгрейдер и Crash. Забирай бонус по моей ссылке 👇")
+        openShare(link, "🧠 Залетай в BrainrotRoll! Бесплатные кейсы с брейнротами из Steal a Brainrot, апгрейдер и Crash. Забирай бонус по моей ссылке 👇")
       }}
     >
       <Share2 className="size-4" /> Пригласить друга

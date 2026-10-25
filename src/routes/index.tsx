@@ -2,7 +2,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import { Box, ChevronRight, Crown, Dices, Ellipsis, EyeOff, GraduationCap, Megaphone, Plus, Rocket, Settings, Ticket, TrendingUp, User, X } from 'lucide-react'
 import logo from '@/assets/brainrotdice-logo.webp'
-import meowlGuide from '@/assets/meowl-guide.webp'
+import meowlGuide from "@/assets/meowl-halloween.png"
+import { HalloweenEvent, HalloweenFX } from "@/components/casino/Halloween"
 import { Onboarding } from '@/components/casino/Onboarding'
 import { OwnerView } from '@/components/casino/OwnerView'
 import { isOwner } from '@/lib/tg-auth'
@@ -29,9 +30,9 @@ import { BrainrotImg, Coin, CoinAmount, cdnImage } from '@/components/casino/ui'
 export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
-      { title: 'BrainrotDice — кейсы с брейнротами' },
+      { title: 'BrainrotRoll — кейсы с брейнротами' },
       { name: 'description', content: 'Telegram Mini App: открывай тематические кейсы и выбивай брейнротов из Steal a Brainrot' },
-      { property: 'og:title', content: 'BrainrotDice — кейсы с брейнротами' },
+      { property: 'og:title', content: 'BrainrotRoll — кейсы с брейнротами' },
       { property: 'og:description', content: 'Хеллуин, Кристальный, Морская братва и другие кейсы с брейнротами из Steal a Brainrot' },
       { property: 'og:type', content: 'website' },
       { name: 'twitter:card', content: 'summary_large_image' },
@@ -110,6 +111,7 @@ function Shell() {
 
   return (
     <div className="bd-bg min-h-dvh pb-10">
+      <HalloweenFX />
       {maint.on && owner && (
         <div className="bg-[var(--bd-gold)] px-4 py-1.5 text-center text-[11px] font-extrabold text-black">Тех. перерыв включён — сайт видишь только ты</div>
       )}
@@ -118,11 +120,13 @@ function Shell() {
       <BestDrop24h />
       <LiveFeed />
       <main className="mx-auto max-w-xl px-4 pt-4">
+        {tab === "cases" && <HalloweenEvent onPlay={() => document.getElementById("cases-grid")?.scrollIntoView({ behavior: "smooth" })} />}
         {tab === 'cases' && <Hero onPlay={() => go('upgrade')} onLearn={() => { haptic(); setTourOpen(true) }} />}
         {tab === 'cases' && <BattlePassPromo onOpen={() => go('battlepass')} />}
         {tabs.map(({ id }) =>
           visited.has(id) ? (
-            <section key={id} hidden={tab !== id} className={cn(tab === 'cases' && id === 'cases' && 'mt-6')}>
+            <section key={id} hidden={tab !== id} className={cn("hw-view",tab === 'cases' && id === 'cases' && 'mt-6')}>
+              {id === "cases" && <div id="cases-grid" />}
               {id === 'cases' && <CasesView />}
               {id === 'battlepass' && <BattlePassView />}
               {id === 'upgrade' && <UpgraderView />}
@@ -173,7 +177,7 @@ function MaintenanceScreen({ text }: { text: string | null }) {
           <Wrench className="size-8" />
         </div>
         <h1 className="mt-5 font-heading text-2xl font-extrabold">Технический перерыв</h1>
-        <p className="mt-2 text-sm text-white/60">{text || 'Мы обновляем BrainrotDice. Скоро вернёмся — твой баланс и инвентарь в сохранности.'}</p>
+        <p className="mt-2 text-sm text-white/60">{text || 'Мы обновляем BrainrotRoll. Скоро вернёмся — твой баланс и инвентарь в сохранности.'}</p>
       </div>
     </div>
   )
@@ -266,7 +270,7 @@ function Header({ onDeposit, onMenu }: { onDeposit: () => void; onMenu: () => vo
           <div className="flex items-center gap-1.5">
             <img src={logo} alt="" className="bd-logo" width={42} height={42} />
             <div className="bd-wordmark">
-              Brainrot<span>Dice</span>
+              Brainrot<span>Roll</span>
             </div>
           </div>
         </div>
@@ -469,9 +473,9 @@ function Hero({ onPlay, onLearn }: { onPlay: () => void; onLearn: () => void }) 
     <div className="bd-hero">
       <div className="bd-rays pointer-events-none absolute -right-24 -top-24 size-80 opacity-30" />
       <div className="relative z-10 max-w-[60%]">
-        <div className="bd-hero-chip">Steal a Brainrot · кейсы</div>
+        <div className="bd-hero-chip">🎃 Хеллуин · Steal a Brainrot</div>
         <h1 className="mt-3 font-heading text-[27px] font-extrabold leading-[1.02]">
-          Кидай кубик, лови <span className="bd-hero-accent">OG</span>
+          Крути кейсы, кради <span className="bd-hero-accent">OG</span>
         </h1>
         <p className="mt-2 text-xs leading-relaxed text-white/65">Кейсы, апгрейдер, Crash и Dice. Депозит и вывод прямо в Roblox через админа.</p>
         <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -505,7 +509,7 @@ function Hero({ onPlay, onLearn }: { onPlay: () => void; onLearn: () => void }) 
 function Footer() {
   return (
     <p className="mt-10 text-center text-[10px] leading-relaxed text-white/30">
-      BrainrotDice — фан-проект, не связан с Roblox Corporation. Монеты — внутриигровая валюта сайта и не выводятся в деньги.
+      BrainrotRoll — фан-проект, не связан с Roblox Corporation. Монеты — внутриигровая валюта сайта и не выводятся в деньги.
       Данные и изображения персонажей — Steal a Brainrot Wiki (Fandom). 18+
     </p>
   )
